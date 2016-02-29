@@ -1,0 +1,20 @@
+﻿<div class="container">
+    <form name="createCommitForm" class="form-horizontal">
+        <fieldset>
+            <legend>Create a new commit! :)</legend>
+
+            <div class="form-group">
+                <label for="code" class="col-lg-2 control-label">Source code</label>
+                <div class="col-lg-10">
+                    <input id="code" type="text" placeholder="Many code, such nightmare" ng-model="commit.SourceCode" required="required" class="form-control" />
+                </div>
+            </div>
+
+            <div class="pull-right">
+                <button ng-click="vm.addCommit(commit.SourceCode)" ng-disabled="createCommitForm.$invalid" class="btn btn-primary">
+                    +Commit
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>

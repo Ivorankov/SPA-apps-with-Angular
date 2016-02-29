@@ -1,0 +1,21 @@
+﻿<div class="container text-center">
+    <div class="jumbotron">
+        <h1>We are very popular!</h1>
+    </div>
+    <div statistics></div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <strong>Top 10 Projects</strong>
+            <div ng-repeat="project in vm.projects">
+                <div project-Details></div>
+            </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <strong>Top 10 Commits</strong>
+            <div ng-repeat="commit in vm.commits">
+                <div commit-Details></div>
+            </div>
+        </div>
+    </div>
+</div>

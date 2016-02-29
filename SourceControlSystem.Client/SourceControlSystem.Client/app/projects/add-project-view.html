@@ -1,0 +1,48 @@
+﻿<div class="container">
+    <form name="addProject" class="form-horizontal">
+        <fieldset>
+            <legend>Add a new project :)</legend>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input id="name" type="text" placeholder="Name of your project" ng-model="project.Name" required="required" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-lg-2 control-label">Description</label>
+                <div class="col-lg-10">
+                    <input id="description" type="text" placeholder="Much text, such content" ng-model="project.Description" required="required" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="licence" class="col-lg-2 control-label">Licence</label>
+                <div class="col-lg-10">
+                    <select class="form-control" required="required" ng-model="project.LicenseId" id="licence">
+                        <option ng-repeat="license in vm.licenses" value="{{license.Id}}">
+                            {{license.Name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-offset-2 col-md-10">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label for="is-private">
+                            <input id="is-private" type="checkbox" ng-model="project.Private"> Private repo?
+                        </label>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="pull-right">
+                <button ng-click="vm.addProject(project)" ng-disabled="addProject.$invalid" class="btn btn-primary">
+                    Add proejct
+                </button>
+                <a href="#/" class="btn btn-primary">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+</div>

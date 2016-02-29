@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Gitthing</title>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="Content/toastr.css" rel="stylesheet" type="text/css"/>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="Scripts/toastr.js"></script>
+</head>
+<body ng-app="gitApp" ng-cloak ng-controller="MainController as vm">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/" class="navbar-brand">I like pie ?:O</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#/projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#/projects/add">Add Projects</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-if="!vm.globallySetCurrentUser">
+                    <li>
+                        <a href="#/identity/register">Register</a>
+                    </li>
+                    <li>
+                        <a href="#/identity/login">Login</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-if="vm.globallySetCurrentUser">
+                    <li>
+                        <a href="#/identity/profile">{{vm.globallySetCurrentUser}}</a>
+                    </li>
+                    <li>
+                        <a href="#/" ng-click="vm.logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-view>
+    </div>
+    <hr />
+    <footer>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                Exams are fun ;)
+            </div>
+        </div>
+    </footer>
+    <script src="app/app.js"></script>
+    <script src="app/common/main-controller.js"></script>
+    <script src="app/home/home-controller.js"></script>
+    <script src="app/identity/login-controller.js"></script>
+    <script src="app/identity/register-controller.js"></script>
+    <script src="app/projects/projects-controller.js"></script>
+    <script src="app/projects/add-project-controller.js"></script>
+    <script src="app/projects/project-details-controller.js"></script>
+    <script src="app/commits/add-commit-controller.js"></script>
+    <script src="app/commits/commit-controller.js"></script>
+
+    <script src="app/common/notifier-serivce.js"></script>
+    <script src="app/common/data-service.js"></script>
+    <script src="app/identity/auth-service.js"></script>
+    <script src="app/identity/identity-service.js"></script>
+    <script src="app/home/stats-service.js"></script>
+    <script src="app/home/statistics-directive.js"></script>
+    <script src="app/projects/projects-directive.js"></script>
+    <script src="app/projects/projects-service.js"></script>
+    <script src="app/commits/commits-directive.js"></script>
+    <script src="app/commits/commits-service.js"></script>
+
+</body>
+</html>
